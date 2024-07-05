@@ -1,3 +1,5 @@
+{% load post_filters %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +9,6 @@
 </head>
 <body>
 	<h1>{{ post.title }}</h1>
-	<p>{{ post.content|safe }}</p>
+	<p>{{ post.content|markdown }}</p>
 </body>
 </html>
