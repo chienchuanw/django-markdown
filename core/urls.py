@@ -4,5 +4,5 @@ from posts import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("post-detail", views.display_post, name="detail"),
+    path("post/<slug:slug>/", views.display_post, name="detail"),
 ]
