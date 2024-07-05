@@ -10,5 +10,7 @@ register = template.Library()
 @register.filter(name="markdown")
 @stringfilter
 def render_markdown(value):
-    md = markdown.Markdown(extensions=["fenced_code", SlugFieldExtension()])
+    md = markdown.Markdown(
+        extensions=["fenced_code", "codehilite", SlugFieldExtension()]
+    )
     return mark_safe(md.convert(value))
